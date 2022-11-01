@@ -16,6 +16,9 @@ def multiply(x, y):
 def divide (x,y):
     return x/y
 
+# Print current version.
+cur_version = "1.0.1"
+print("< Calculator Ver.", cur_version, ">")
 
 print("Select operation.")
 print("1.Add")
