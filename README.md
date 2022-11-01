@@ -15,9 +15,10 @@
 
 ## All Versions
 > - ### Ver.1.0.1 (latest)
->
+> &nbsp;&nbsp;&nbsp;&nbsp; - Change the input message.
+> #
 > - ### Ver.1.0.0
->
+> &nbsp;&nbsp;&nbsp;&nbsp; - The first release version.
 >
 >
 >
