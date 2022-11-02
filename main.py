@@ -17,7 +17,7 @@ def divide (x,y):
     return x/y
 
 # Print current version.
-cur_version = "1.1.0"
+cur_version = "1.1.1"
 print("< Calculator Ver.", cur_version, ">")
 
 print("Select operation.")
@@ -56,19 +56,22 @@ while True:
             next_calculation = input("Let's do next calculation? (yes/no): ")
             next_calculation = next_calculation.lower()
             if next_calculation == "no":
-                sure = input("Are you sure to exit? (yes/no): ")
-                sure = sure.lower()
-                if sure == "yes":
-                    flag = -1;
-                    break
-                elif sure != "no":
-                    print("[Error]Invalid Input! Please type yes or no.")
-                
+                while 1:
+                    sure = input("Are you sure to exit? (yes/no): ")
+                    sure = sure.lower()
+                    if sure == "yes":
+                        flag = -1;
+                        break
+                    elif sure != "no":
+                        print("[Error]Invalid Input! Please type yes or no.")
+                    else:
+                        break
             elif next_calculation != "yes":
                 print("[Error] Invalid Input! Please type yes or no.")
             else:
                 break
-
+            if flag == -1:
+                break
         if flag == -1:
             break    
 
