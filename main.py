@@ -17,7 +17,7 @@ def divide (x,y):
     return x/y
 
 # Print current version.
-cur_version = "1.0.1"
+cur_version = "1.1.0"
 print("< Calculator Ver.", cur_version, ">")
 
 print("Select operation.")
