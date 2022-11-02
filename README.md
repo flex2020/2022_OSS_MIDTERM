@@ -18,7 +18,7 @@
 >  &nbsp;&nbsp;&nbsp;&nbsp; - Print the current version when starting the program.
 > 
 >  &nbsp;&nbsp;&nbsp;&nbsp; - Improve the exit routines.
->
+> #
 > - ### Ver. 1.0.1
 > &nbsp;&nbsp;&nbsp;&nbsp; - Change the input message.
 > #
