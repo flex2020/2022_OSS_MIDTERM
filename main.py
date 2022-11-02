@@ -16,6 +16,9 @@ def multiply(x, y):
 def divide (x,y):
     return x/y
 
+# Print current version.
+cur_version = "1.1.0"
+print("< Calculator Ver.", cur_version, ">")
 
 print("Select operation.")
 print("1.Add")
@@ -26,7 +29,7 @@ print("4.Divide")
 
 while True:
     # take input from the user
-    choice = input("Enter choice(1/2/3): ")
+    choice = input("Enter choice(1/2/3/4): ")
 
     # check if choice is one of the four options
     if choice in ('1', '2', '3', '4'):
@@ -48,9 +51,26 @@ while True:
 
         # check if user wants another calculation
         # break the while loop if answer is no
-        next_calculation = input("Let's do next calculation? (yes/no): ")
-        if next_calculation == "no":
-            break
+        flag = 0; # if flag == -1 then loop is finished.
+        while 1:
+            next_calculation = input("Let's do next calculation? (yes/no): ")
+            next_calculation = next_calculation.lower()
+            if next_calculation == "no":
+                sure = input("Are you sure to exit? (yes/no): ")
+                sure = sure.lower()
+                if sure == "yes":
+                    flag = -1;
+                    break
+                elif sure != "no":
+                    print("[Error]Invalid Input! Please type yes or no.")
+                
+            elif next_calculation != "yes":
+                print("[Error] Invalid Input! Please type yes or no.")
+            else:
+                break
+
+        if flag == -1:
+            break    
 
     else:
-        print("Invalid Input")
+        print("[Error]Invalid Input")
