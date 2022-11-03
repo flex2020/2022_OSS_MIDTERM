@@ -2,3 +2,6 @@
 
 #log file
 *.log
+
+# pycache
+__pycache__
