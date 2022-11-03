@@ -14,6 +14,8 @@ def multiply(x, y):
 
 #Need to define divide function.
 def divide (x,y):
+    if y == 0:
+        return "error"
     return x/y
 
 # make the logger
@@ -44,7 +46,7 @@ endMsg = "============Finish the Program============"
 logger.info(startMsg)
 
 # Print current version.
-cur_version = "1.2.0"
+cur_version = "1.2.1"
 print("< Calculator Ver.", cur_version, ">")
 
 print("Select operation.")
@@ -79,9 +81,14 @@ while True:
             logger.info(msg)
             
         elif choice =='4':
-            print(num1, "/", num2, "=", divide(num1,num2))
-            msg = "Result: " + str(num1) + " / " + str(num2) + " = " + str(divide(num1, num2))
-            logger.info(msg)
+            if divide(num1, num2) != "error":
+                print(num1, "/", num2, "=", divide(num1,num2))
+                msg = "Result: " + str(num1) + " / " + str(num2) + " = " + str(divide(num1, num2))
+                logger.info(msg)
+            else:
+                print("[Error] Cannot be Divided by Zero !")
+                msg = "Divided by Zero ERROR! Caused by x: " + str(num1) + "/ y: " + str(num2)
+                logger.error(msg)
             
 
         # check if user wants another calculation
@@ -112,5 +119,7 @@ while True:
 
     else:
         print("[Error]Invalid Input")
+        msg = "Invalid input for the menu. Caused by choice: " + str(choice)
+        logger.error(msg)
 
 logger.info(endMsg)
