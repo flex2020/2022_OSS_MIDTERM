@@ -1,4 +1,4 @@
-# Calculator Ver.1.2.1
+# Calculator Ver.1.3.0
 
 ## What Is This?
 > This is the simple calculator.
@@ -14,7 +14,10 @@
 > 3. Press Ctrl+F5 at the VSCode and use this.
 
 ## All Versions
-> - ### Ver. 1.2.1 (latest)
+> - ### Ver. 1.3.0 (latest)
+>  &nbsp;&nbsp;&nbsp;&nbsp; - Improve the code structure.
+> #
+> - ### Ver. 1.2.1
 >  &nbsp;&nbsp;&nbsp;&nbsp; - Improve the devide function.
 >
 >  &nbsp;&nbsp;&nbsp;&nbsp; - Improve the logging function.
