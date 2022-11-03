@@ -1,4 +1,4 @@
-# Calculator Ver.1.2.0
+# Calculator Ver.1.2.1
 
 ## What Is This?
 > This is the simple calculator.
@@ -14,14 +14,19 @@
 > 3. Press Ctrl+F5 at the VSCode and use this.
 
 ## All Versions
-> - ### Ver. 1.2.0 (latest)
+> - ### Ver. 1.2.1 (latest)
+>  &nbsp;&nbsp;&nbsp;&nbsp; - Improve the devide function.
+>
+>  &nbsp;&nbsp;&nbsp;&nbsp; - Improve the logging function.
+>  
+> - ### Ver. 1.2.0
 >  &nbsp;&nbsp;&nbsp;&nbsp; - Add logging function.
 >  
 >  &nbsp;&nbsp;&nbsp;&nbsp; - Add .gitignore for the .log file.
 > #
 > - ### Ver. 1.1.1
 >  &nbsp;&nbsp;&nbsp;&nbsp; - Improve the exit routines.
-> #
+> 
 > - ### Ver. 1.1.0
 >  &nbsp;&nbsp;&nbsp;&nbsp; - Print the current version when starting the program.
 > 
@@ -29,7 +34,7 @@
 > #
 > - ### Ver. 1.0.1
 > &nbsp;&nbsp;&nbsp;&nbsp; - Change the input message.
-> #
+>
 > - ### Ver. 1.0.0
 > &nbsp;&nbsp;&nbsp;&nbsp; - The first release version.
 > 
