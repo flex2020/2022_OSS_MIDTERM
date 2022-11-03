@@ -16,8 +16,35 @@ def multiply(x, y):
 def divide (x,y):
     return x/y
 
+# make the logger
+import logging
+def makeLogger():
+    logFilePath = "./output.log"
+
+    logger = logging.getLogger()
+    logger.setLevel(logging.DEBUG)
+    formatter = logging.Formatter(u"%(asctime)s [%(levelname)8s] %(message)s")
+
+    #--- handler for Streaming Logging
+    #streamingHandler = logging.StreamHandler()
+    #streamingHandler.setFormatter(formatter)
+
+    fileHandler = logging.FileHandler(logFilePath)
+    fileHandler.setFormatter(formatter)
+
+    #logger.addHandler(streamingHandler)
+    logger.addHandler(fileHandler)
+    return logger
+
+
+logger = makeLogger()
+startMsg = "============Start the Program============"
+endMsg = "============Finish the Program============"
+
+logger.info(startMsg)
+
 # Print current version.
-cur_version = "1.1.1"
+cur_version = "1.2.0"
 print("< Calculator Ver.", cur_version, ">")
 
 print("Select operation.")
@@ -38,15 +65,23 @@ while True:
 
         if choice == '1':
             print(num1, "+", num2, "=", add(num1, num2))
+            msg = "Result: " + str(num1) + " + " + str(num2) + " = " + str(add(num1, num2))
+            logger.info(msg)
 
         elif choice == '2':
             print(num1, "-", num2, "=", subtract(num1, num2))
+            msg = "Result: " + str(num1) + " - " + str(num2) + " = " + str(subtract(num1, num2))
+            logger.info(msg)
 
         elif choice == '3':
             print(num1, "*", num2, "=", multiply(num1, num2))
+            msg = "Result: " + str(num1) + " * " + str(num2) + " = " + str(multiply(num1, num2))
+            logger.info(msg)
             
         elif choice =='4':
             print(num1, "/", num2, "=", divide(num1,num2))
+            msg = "Result: " + str(num1) + " / " + str(num2) + " = " + str(divide(num1, num2))
+            logger.info(msg)
             
 
         # check if user wants another calculation
@@ -60,7 +95,7 @@ while True:
                     sure = input("Are you sure to exit? (yes/no): ")
                     sure = sure.lower()
                     if sure == "yes":
-                        flag = -1;
+                        flag = -1
                         break
                     elif sure != "no":
                         print("[Error]Invalid Input! Please type yes or no.")
@@ -77,3 +112,5 @@ while True:
 
     else:
         print("[Error]Invalid Input")
+
+logger.info(endMsg)
