@@ -46,7 +46,7 @@ endMsg = "============Finish the Program============"
 logger.info(startMsg)
 
 # Print current version.
-cur_version = "1.2.0"
+cur_version = "1.2.1"
 print("< Calculator Ver.", cur_version, ">")
 
 print("Select operation.")
