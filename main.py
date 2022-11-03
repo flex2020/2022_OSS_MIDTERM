@@ -1,28 +1,15 @@
 # Program make a simple calculator
 
-# This function adds two numbers
-def add(x, y):
-    return x + y
-
-# This function subtracts two numbers
-def subtract(x, y):
-    return x - y
-
-# This function multiplies two numbers
-def multiply(x, y):
-    return x * y
-
-#Need to define divide function.
-def divide (x,y):
-    if y == 0:
-        return "error"
-    return x/y
+# import the functinos for the calculation
+import calculation_functions as cal
 
 # make the logger
 import logging
 def makeLogger():
+    # setting the log file path
     logFilePath = "./output.log"
 
+    # setting the logger and formatter
     logger = logging.getLogger()
     logger.setLevel(logging.DEBUG)
     formatter = logging.Formatter(u"%(asctime)s [%(levelname)8s] %(message)s")
@@ -34,7 +21,7 @@ def makeLogger():
     fileHandler = logging.FileHandler(logFilePath)
     fileHandler.setFormatter(formatter)
 
-    #logger.addHandler(streamingHandler)
+    # logger.addHandler(streamingHandler) # Add handler for Streaming logging
     logger.addHandler(fileHandler)
     return logger
 
@@ -42,13 +29,11 @@ def makeLogger():
 logger = makeLogger()
 startMsg = "============Start the Program============"
 endMsg = "============Finish the Program============"
+cur_version = "1.3.0"
 
 logger.info(startMsg)
-
 # Print current version.
-cur_version = "1.2.1"
 print("< Calculator Ver.", cur_version, ">")
-
 print("Select operation.")
 print("1.Add")
 print("2.Subtract")
@@ -66,24 +51,24 @@ while True:
         num2 = float(input("Enter second number: "))
 
         if choice == '1':
-            print(num1, "+", num2, "=", add(num1, num2))
-            msg = "Result: " + str(num1) + " + " + str(num2) + " = " + str(add(num1, num2))
+            print(num1, "+", num2, "=", cal.add(num1, num2))
+            msg = "Result: " + str(num1) + " + " + str(num2) + " = " + str(cal.add(num1, num2))
             logger.info(msg)
 
         elif choice == '2':
-            print(num1, "-", num2, "=", subtract(num1, num2))
-            msg = "Result: " + str(num1) + " - " + str(num2) + " = " + str(subtract(num1, num2))
+            print(num1, "-", num2, "=", cal.subtract(num1, num2))
+            msg = "Result: " + str(num1) + " - " + str(num2) + " = " + str(cal.subtract(num1, num2))
             logger.info(msg)
 
         elif choice == '3':
-            print(num1, "*", num2, "=", multiply(num1, num2))
-            msg = "Result: " + str(num1) + " * " + str(num2) + " = " + str(multiply(num1, num2))
+            print(num1, "*", num2, "=", cal.multiply(num1, num2))
+            msg = "Result: " + str(num1) + " * " + str(num2) + " = " + str(cal.multiply(num1, num2))
             logger.info(msg)
             
         elif choice =='4':
-            if divide(num1, num2) != "error":
-                print(num1, "/", num2, "=", divide(num1,num2))
-                msg = "Result: " + str(num1) + " / " + str(num2) + " = " + str(divide(num1, num2))
+            if cal.divide(num1, num2) != "error":
+                print(num1, "/", num2, "=", cal.divide(num1,num2))
+                msg = "Result: " + str(num1) + " / " + str(num2) + " = " + str(cal.divide(num1, num2))
                 logger.info(msg)
             else:
                 print("[Error] Cannot be Divided by Zero !")
