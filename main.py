@@ -29,7 +29,7 @@ def makeLogger():
 logger = makeLogger()
 startMsg = "============Start the Program============"
 endMsg = "============Finish the Program============"
-cur_version = "1.3.0"
+cur_version = "1.3.1"
 
 logger.info(startMsg)
 # Print current version.
@@ -79,25 +79,22 @@ while True:
         # check if user wants another calculation
         # break the while loop if answer is no
         flag = 0; # if flag == -1 then loop is finished.
-        while 1:
+        while True:
             next_calculation = input("Let's do next calculation? (yes/no): ")
             next_calculation = next_calculation.lower()
             if next_calculation == "no":
-                while 1:
-                    sure = input("Are you sure to exit? (yes/no): ")
-                    sure = sure.lower()
-                    if sure == "yes":
-                        flag = -1
-                        break
-                    elif sure != "no":
-                        print("[Error]Invalid Input! Please type yes or no.")
-                    else:
-                        break
+                sure = input("Are you sure to exit? (yes/no): ")
+                sure = sure.lower()
+                if sure == "yes":
+                    flag = -1
+                    break
+                elif sure != "no":
+                    print("[Error]Invalid Input! Please type yes or no.")
+                else:
+                    break
             elif next_calculation != "yes":
                 print("[Error] Invalid Input! Please type yes or no.")
             else:
-                break
-            if flag == -1:
                 break
         if flag == -1:
             break    
